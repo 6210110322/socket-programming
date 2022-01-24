@@ -70,7 +70,7 @@ server.on('connection', (socket) => {
 
   socket.on('close', (data) => {
     let index = sockets.findIndex((o) => {
-      returno.remoteAddress === socket.remoteAddress && o.remotePort === socket.remotePort;
+      return o.remoteAddress === socket.remoteAddress && o.remotePort === socket.remotePort;
     })
     if (index !== -1) sockets.splice(index, 1);
     sockets.forEach((sock) => {
